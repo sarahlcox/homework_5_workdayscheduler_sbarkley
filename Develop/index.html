@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,39 +32,32 @@
     <div class="container">
       <!-- Timeblocks go here -->
             <!-- Create a one row, three column spread for layout using bootstrap. left col will be time from moment api,  middle col will be an input value, right will be a save btn, OR a table layout  -->
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
+            <table class="table table-bordered" style="width: 100%;">
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                <tr id="9am" class="time-block time">
+                  <td>Time1</td>
+                  <td>
+                    <form id="task-form" method="POST">
+                      <input class="form-control" type="text" placeholder="Add a task or appointment...">
+                    </form>
+                  </td>
+                  <td><input class="btn btn-primary" type="submit" value="Submit" role="button">
+                  </td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                <tr id="row1">
+                  <td>Time2</td>
+                  <td>Task2</td>
+                  <td>Button2</td>
                 </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
+                <tr id="row2">
+                  <td>Time3</td>
+                  <td>Task3</td>
+                  <td>Button3</td>
                 </tr>
               </tbody>
             </table>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
   <script src="script.js"></script>
 </html>

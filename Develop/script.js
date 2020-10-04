@@ -16,14 +16,13 @@ $(document).ready(function(){
         //stop save button from submitting form to save data to text input area
         $(".saveBtn").on("click", function (e) {
             e.preventDefault();
-            // console.log(this);
             var userinput = $(this).siblings(".taskdata").val();
             var savetostorage = $(this).parent().attr("id");
     
             localStorage.setItem(savetostorage, userinput);
         });
 
-        
+         
     
     
     });

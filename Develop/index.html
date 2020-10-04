@@ -29,35 +29,24 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="scheduler">
       <!-- Timeblocks go here -->
             <!-- Create a one row, three column spread for layout using bootstrap. left col will be time from moment api,  middle col will be an input value, right will be a save btn, OR a table layout  -->
-            <table class="table table-bordered" style="width: 100%;">
-              <tbody>
-                <tr id="9am" class="time-block time">
-                  <td>Time1</td>
-                  <td>
-                    <form id="task-form" method="POST">
-                      <input class="form-control" type="text" placeholder="Add a task or appointment...">
-                    </form>
-                  </td>
-                  <td><input class="btn btn-primary" type="submit" value="Submit" role="button">
-                  </td>
-                </tr>
-                <tr id="row1">
-                  <td>Time2</td>
-                  <td>Task2</td>
-                  <td>Button2</td>
-                </tr>
-                <tr id="row2">
-                  <td>Time3</td>
-                  <td>Task3</td>
-                  <td>Button3</td>
-                </tr>
-              </tbody>
-            </table>
-      </div>
+            <div class="container">
+              <div id="time1" class="row time-block row1">
+                <div class="col-md-1 hour">
+                  9:00 AM
+                </div>
+                <textarea class="col-md-10 description"></textarea>
+                <button class="btn saveBtn col-md-1">
+                  Save
+                </button>
+              </div>
+
+            </div>
     </div>
+
+
   </body>
   <script src="script.js"></script>
 </html>

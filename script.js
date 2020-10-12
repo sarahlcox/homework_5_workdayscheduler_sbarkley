@@ -12,9 +12,9 @@ $(document).ready(function(){
     // //set items in local storage. resource:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
         var inputdata = Object.keys(localStorage);
         for (var i = 0; i < timeArr.length; i++) {
-            // var userinput = localStorage.getItem(inputdata[i]);
-            // var savetostorage = $("#" + inputdata[i]).find("textarea")
-            // savetostorage.val(userinput);
+            var userinput = localStorage.getItem(inputdata[i]);
+            var savetostorage = $("#" + inputdata[i]).find("textarea")
+            savetostorage.val(userinput);
 
             /*
             <div class="row time-block">
@@ -38,7 +38,10 @@ $(document).ready(function(){
             //AM : less than 12: timeArr[i]+AM 
             if(timeArr[i]<12){
                 d2.text(timeArr[i]+" AM");
-            }            //PM: greater than 12 : timeArr[i]-12=x PM:
+            }            
+            //empty row needs to be gray if time past, green if free, red if busy (toggle fx?)
+    //Color coding schedule dependant upon hour
+            //PM: greater than 12 : timeArr[i]-12=x PM:
             //if 12 : 12PM
             var textarea=$("<textarea>");
             var btn=$("<button>");
@@ -79,18 +82,20 @@ $(document).ready(function(){
             $(".container").append(d1);
         }
         // stop save button from submitting form to save data to text input area
+         //Assign saveBtn click listener for user input and time stamp??
+
         $(".saveBtn").on("click", function (e) {
             e.preventDefault();
-             console.log($(this).attr("id"));
+            //  console.log($(this).attr("id"));
             // console.log($(this).parent().children()[1]);
-             var userinput=$(this).parent().children()[1].attr("value");
-             console.log(userinput)
+            //  var userinput=$(this).parent().children()[1].attr("value");
+            //  console.log(userinput)
             //trigger
             //grab vals
             //set to ls
+            
             // var userinput = $(this).siblings(".taskdata").val();
             // var savetostorage = $(this).parent().attr("id");
-    
             // localStorage.setItem(savetostorage, userinput);
         });
 
@@ -98,19 +103,4 @@ $(document).ready(function(){
     
     
     });
-//create fx that will input times into first col of the table from moment needs to repeat for every row
-    //Color coding schedule dependant upon hour
-    //Need to find amount of hours
-    //Create a loop to input time into time column/ind.row
-    //if then statement for past/present, probably input an interval timer here to update appearance of calendar
-
-//create text input fx that will save to local storage in middle col  needs to repeat for every row
-    //Rendering stored inputs after page refresh
- //Assign saveBtn click listener for user input and time stamp??
-    // alert('Button clicked!');
-
-    // //set items in local storage.
-    // localStorage.setItem(time, text);
-//empty row needs to be gray if time past, green if free, red if busy (toggle fx?)
-    //Color coding schedule dependant upon hour
 

@@ -16,18 +16,6 @@ $(document).ready(function(){
             var savetostorage = $("#" + inputdata[i]).find("textarea")
             savetostorage.val(userinput);
 
-            /*
-            <div class="row time-block">
-                <div class="col-md-1 hour">
-                  5:00 PM
-                </div>
-                <textarea class="col-md-10 taskdata">
-                </textarea>
-                <button class="btn saveBtn col-md-1">
-                  Save
-                </button>
-            </div>
-             */
             //1. create code via html
             var d1=$("<div>");
             //<div></div>
@@ -38,7 +26,11 @@ $(document).ready(function(){
             //AM : less than 12: timeArr[i]+AM 
             if(timeArr[i]<12){
                 d2.text(timeArr[i]+" AM");
-            }            
+            } else if(timeArr[i]==12) {
+                d2.text(timeArr[i]+" PM");
+            } else {
+                d2.text((timeArr[i]-12)+" PM");
+            }
             //empty row needs to be gray if time past, green if free, red if busy (toggle fx?)
     //Color coding schedule dependant upon hour
             //PM: greater than 12 : timeArr[i]-12=x PM:

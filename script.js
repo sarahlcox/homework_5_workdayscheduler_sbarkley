@@ -12,9 +12,9 @@ $(document).ready(function(){
     // //set items in local storage. resource:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
         var inputdata = Object.keys(localStorage);
         for (var i = 0; i < timeArr.length; i++) {
-            var userinput = localStorage.getItem(inputdata[i]);
-            var savetostorage = $("#" + inputdata[i]).find("textarea")
-            savetostorage.val(userinput);
+            var userinput = localStorage.getItem(timeArr[i]);
+            // var savetostorage = $("#" + inputdata[i]).find("textarea")
+            // savetostorage.val(userinput);
 
             //1. create code via html
             var d1=$("<div>");
@@ -54,7 +54,8 @@ $(document).ready(function(){
                 textarea.attr("class","col-md-10 taskdata past")
 
             }
-            btn.text("Save")
+            btn.text("Save");
+            textarea.text(userinput);
             //2.create variables
             //3.syle it
             //4.append to each other (parent and child)
@@ -86,9 +87,9 @@ $(document).ready(function(){
             //grab vals
             //set to ls
             
-            // var userinput = $(this).siblings(".taskdata").val();
-            // var savetostorage = $(this).parent().attr("id");
-            // localStorage.setItem(savetostorage, userinput);
+            var userinput = $(this).siblings(".taskdata").val();
+            var savetostorage = $(this).attr("id");
+            localStorage.setItem(savetostorage, userinput);
         });
 
          
